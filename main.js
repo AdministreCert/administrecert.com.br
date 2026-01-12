@@ -1,5 +1,6 @@
 window.addEventListener('load', () => {
   const features = document.querySelector('.features');
+  const whatsapp = document.querySelector('.whatsapp-button');
 
   const onClick = e => {
     var href = e.target.getAttribute('href');
@@ -19,8 +20,12 @@ window.addEventListener('load', () => {
       if (!features.classList.contains('animated')) {
         features.classList.add('animated');
       }
+      if (!whatsapp.classList.contains('visible')) {
+        whatsapp.classList.add('visible');
+      }
     } else if (window.scrollY <= 50) {
       features.classList.remove('animated');
+      whatsapp.classList.remove('visible');
     }
   }, false);
 }, false);

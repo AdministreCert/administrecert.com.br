@@ -654,6 +654,26 @@ footer {
   background-color: #193D8A;
 }
 
+.whatsapp-button {
+  position: fixed;
+  bottom: 30px;
+  right: 40px;
+  background-color: #0DC143;
+  width: 80px;
+  height: 80px;
+  color: #fff;
+  font-size: 50px;
+  padding: 11px 19px;
+  box-sizing: border-box;
+  border-radius: 40px;
+  opacity: 0;
+  transition: opacity .25s;
+}
+
+.whatsapp-button.visible {
+  opacity: 1;
+}
+
 @keyframes mainFadeRight {
   0% {
     transform: translateX(100px);
@@ -803,5 +823,78 @@ footer {
   main .info h3 {
     text-align: left !important;
     width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .types ul {
+    flex-direction: column;
+  }
+  .types ul li {
+    flex-basis: 100%;
+    width: 100%;
+  }
+  .types ul li:not(:last-child) {
+    margin-bottom: 40px;
+  }
+  .price .price-wrapper {
+    padding: 0;
+  }
+  .contact ul li {
+    width: 100%;
+  }
+  .contact .location span {
+    width: 100%;
+  }
+  .clients {
+    padding: 50px 100px 100px 100px;
+  }
+  footer {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .price h2 {
+    font-size: 80px;
+  }
+  .price ul li > span:first-of-type {
+    width: 190px;
+  }
+  .price ul li a {
+    font-size: 30px;
+    width: 200px;
+  }
+  .price ul li .badge i {
+    margin-right: 30px;
+  }
+  footer {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  .clients {
+    padding: 50px 0 100px 0;
+  } 
+  .contact .location i {
+    font-size: 100px;
+  }
+  .contact .location span {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .clients ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  .clients ul li:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  footer {
+    font-size: 16px;
+    text-align: center;
   }
 }
