@@ -1,8 +1,13 @@
 window.addEventListener('load', () => {
   const features = document.querySelector('.features');
   const whatsapp = document.querySelector('.whatsapp-button');
+  const menu = document.querySelector('.menu');
+  const nav = document.querySelector('nav ul');
 
   const onClick = e => {
+    if (nav.classList.contains('open')) {
+      nav.classList.remove('open');
+    }
     var href = e.target.getAttribute('href');
     if (href && href.length > 1 && href.indexOf('#') === 0) {
       e.preventDefault();
@@ -26,6 +31,15 @@ window.addEventListener('load', () => {
     } else if (window.scrollY <= 50) {
       features.classList.remove('animated');
       whatsapp.classList.remove('visible');
+    }
+  }, false);
+
+  menu.addEventListener('click', ev => {
+    ev.preventDefault();
+    if (nav.classList.contains('open')) {
+      nav.classList.remove('open');
+    } else {
+      nav.classList.add('open');
     }
   }, false);
 }, false);

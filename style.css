@@ -534,7 +534,7 @@ main .buttons a:last-child i {
   display: inline-block;
   width: 100%;
   box-sizing: border-box;
-  padding: 50px 200px 200px 200px;
+  padding: 50px 100px 200px 100px;
 }
 
 .clients h1 {
@@ -561,6 +561,11 @@ main .buttons a:last-child i {
   width: 177px;
   height: 177px;
   border-radius: 14px;
+}
+
+.clients ul li a {
+  width: 100%;
+  text-align: center;
 }
 
 .clients ul li img {
@@ -668,10 +673,15 @@ footer {
   border-radius: 40px;
   opacity: 0;
   transition: opacity .25s;
+  z-index: 4;
 }
 
 .whatsapp-button.visible {
   opacity: 1;
+}
+
+.menu {
+  display: none;
 }
 
 @keyframes mainFadeRight {
@@ -770,6 +780,12 @@ footer {
   }
 }
 
+@media screen and (max-width: 1610px) {
+  .features .right .item:last-child {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 1500px) {
   main .info h3:first-child {
     font-size: 40px;
@@ -788,6 +804,12 @@ footer {
   }
 
   main .buttons a:last-child i {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 1420px) {
+  .features .item span {
     font-size: 18px;
   }
 }
@@ -815,14 +837,36 @@ footer {
     align-items: flex-end;
   }
 
-  main .info {
+  main .info, main .buttons {
     width: 50%;
     flex-direction: column;
+  }
+
+  main .buttons a {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  main .buttons a:first-child {
+    justify-content: center;
+  }
+
+  main .buttons a:last-child {
+    margin-top: 20px;
   }
 
   main .info h3 {
     text-align: left !important;
     width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .features .item h4 {
+    font-size: 28px;
+  }
+  .features .item span {
+    font-size: 16px;
   }
 }
 
@@ -847,11 +891,45 @@ footer {
     width: 100%;
   }
   .clients {
-    padding: 50px 100px 100px 100px;
+    padding: 50px 50px 100px 50px;
   }
   footer {
     font-size: 24px;
   }
+}
+
+@media screen and (max-width: 1160px) {
+  .features .background {
+    justify-content: start;
+  }
+  .features .align {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .features .align div {
+    text-align: right;
+    width: 100%;
+    flex-grow: 0;
+  }
+  .features .align div.left {
+    margin-bottom: 50px;
+  }
+  .features .right .item:first-child {
+    margin-bottom: 50px;
+  }
+  .features .left .item h4 {
+    width: auto;
+  }
+  .features .left .item .line-box {
+    text-align: left;
+  }
+  nav ul li a {
+    font-size: 16px;
+  }
+  nav ul li:not(:last-child) {
+    margin-right: 20px;
+  }
+  
 }
 
 @media screen and (max-width: 1000px) {
@@ -868,14 +946,106 @@ footer {
   .price ul li .badge i {
     margin-right: 30px;
   }
+  .clients {
+    padding: 50px 0 100px 0;
+  }
   footer {
     font-size: 20px;
+  }
+  main {
+    height: auto;
+    min-height: calc(100vh - 200px);
+    width: 100vw;
+    margin-left: -40px;
+    overflow: hidden;
+
+  }
+  main .background {
+    text-align: center;
+    height: calc(100vh - 200px);
+  }
+  main .info-wrapper {
+    margin: calc(100vh - 80px) 0 40px 20px;
+    height: auto;
+    align-items: center;
+    width: calc(100% - 40px);
+  }
+  main .info h3:first-child {
+    font-size: 35px;
+  }
+  main .info h3:last-child {
+    margin-top: 20px;
+  }
+  main .background h1 {
+    display: none;
+  }
+  .types {
+    margin-top: 50px;
+  }
+  .types h2 {
+    font-size: 40px;
+  }
+  .types p {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .features .background {
+    display: inline-block;
+  }
+  .features .background .content {
+    margin: 0 auto;
+    width: 300px;
+    height: 390px;
+  }
+  .features .align {
+    display: inline-block;
+    margin-top: 390px;
+  }
+
+  .features .item {
+    padding: 120px 0 20px 0;
+    position: relative;
+  }
+
+  .features .item:before {
+    content: ' ';
+    width: 1.5px;
+    background-color: #193D8A;
+    height: 100px;
+    display: inline-block;
+    left: 50%;
+    position: absolute;
+    top: 0;
+  }
+
+  .features .item .line-box {
+    display: none;
+  }
+  .features .item h4 {
+    text-align: center;
+  }
+  .features .left .item span {
+    width: 100%;
+  }
+  .features .item span {
+    width: 100%;
+    text-align: center;
+  }
+
+  .features .align div.left,
+  .features .right .item:first-child {
+    margin-bottom: 0;
   }
 }
 
 @media screen and (max-width: 890px) {
-  .clients {
-    padding: 50px 0 100px 0;
+  .clients ul {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 40px;
+
   } 
   .contact .location i {
     font-size: 100px;
@@ -883,19 +1053,107 @@ footer {
   .contact .location span {
     margin-top: 0;
   }
+  main .info, main .buttons {
+    width: 80%;
+  }
+  main .info h3 {
+    text-align: center !important;
+  }
+  nav {
+    text-align: center;
+    position: relative;
+  }
+  .menu {
+    display: block;
+    position: absolute;
+    left: -20px;
+    top: 60px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #193D8A;
+    font-size: 30px;
+    outline: none;
+  }
+  nav ul {
+    display: inline-block;
+    position: absolute;
+    width: calc(100% + 80px);
+    left: -40px;
+    top: 50px;
+    background-color: #e8e8e8;
+    z-index: 4;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .25s;
+  }
+
+  nav ul.open {
+    max-height: 500px;
+  }
+
+  nav ul li {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  nav ul li:first-child {
+    margin-top: 20px;
+  }
+  nav ul li:last-child {
+    margin-bottom: 20px;
+  }
 }
 
 @media screen and (max-width: 650px) {
-  .clients ul {
-    flex-direction: column;
-    align-items: center;
-  }
-  .clients ul li:not(:last-child) {
-    margin-bottom: 20px;
+  main .info, main .buttons {
+    width: 100%;
   }
   footer {
     font-size: 16px;
     text-align: center;
   }
+  .types {
+    padding-bottom: 50px;
+  }
 }
 
+@media screen and (max-width: 500px) {
+  .types ul li .text {
+    flex-direction: column;
+    font-size: 25px;
+  }
+  .types ul li .text i {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .price ul {
+    margin-top: 110px;
+  }
+  .price ul li span:nth-of-type(2) {
+    display: none;
+  }
+  .contact ul li span {
+    font-size: 18px;
+  }
+  .contact ul li i {
+    margin: 16px 0px 0 10px;
+  }
+  .contact .location span {
+    font-size: 20px;
+  }
+  .whatsapp-button {
+    right: 20px;
+    bottom: 20px;
+    width: 60px;
+    height: 60px;
+    font-size: 40px;
+    padding: 6px 13px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .clients ul {
+    grid-template-columns: auto;
+  }
+}
