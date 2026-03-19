@@ -576,7 +576,7 @@ main .buttons a:last-child i {
 .contact {
   display: inline-block;
   width: 100%;
-  margin-bottom: 150px;
+  margin-bottom: 100px;
 }
 
 .contact h1 {
@@ -645,6 +645,14 @@ main .buttons a:last-child i {
   width: 43%;
   margin-left: 30px;
   margin-top: 40px;
+}
+
+.legal {
+  display: flex;
+  width: 100%;
+  margin-bottom: 100px;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 footer {
@@ -1102,6 +1110,12 @@ footer {
   }
   nav ul li:last-child {
     margin-bottom: 20px;
+  }
+  .legal {
+    flex-direction: column;
+  }
+  .legal img:first-child {
+    margin-bottom: 60px;
   }
 }
 
